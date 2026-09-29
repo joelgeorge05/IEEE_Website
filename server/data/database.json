@@ -1,0 +1,231 @@
+{
+  "events": [
+    {
+      "id": "webnova-2026",
+      "title": "WebNova 2026 — Website Design Showdown",
+      "category": "Competition",
+      "date": "2026-09-30",
+      "displayDate": "30 September 2026",
+      "venue": "Computer Center Labs & Virtual",
+      "prizePool": "₹1,000",
+      "maxCapacity": 100,
+      "status": "open",
+      "fee": "Free for IEEE Members / ₹100 Non-Members",
+      "requirePaymentProof": true,
+      "customFields": [
+        {
+          "id": "phone",
+          "label": "Contact / WhatsApp Number",
+          "type": "text",
+          "placeholder": "+91 94471 23456",
+          "required": true
+        },
+        {
+          "id": "github",
+          "label": "GitHub / Portfolio URL",
+          "type": "text",
+          "placeholder": "https://github.com/username",
+          "required": false
+        },
+        {
+          "id": "teamName",
+          "label": "Team / Squad Codename",
+          "type": "text",
+          "placeholder": "e.g. CyberVanguard",
+          "required": false
+        }
+      ],
+      "description": "Design and develop the premier official chapter web portal for IEEE Computer Society MBITS."
+    },
+    {
+      "id": "hackelite-2026",
+      "title": "HackElite 24-Hr Hackathon",
+      "category": "Hackathon",
+      "date": "2026-10-18",
+      "displayDate": "18-19 October 2026",
+      "venue": "MBITS Central Auditorium",
+      "prizePool": "₹15,000",
+      "maxCapacity": 60,
+      "status": "closed",
+      "fee": "₹150 per Team",
+      "description": "24-hour non-stop rapid prototyping on AI, Smart Infrastructure, and Civic Tech dilemmas."
+    },
+    {
+      "id": "neuralnexus-workshop",
+      "title": "NeuralNexus: GenAI & LLM Fine-Tuning",
+      "category": "Workshop",
+      "date": "2026-11-12",
+      "displayDate": "12 November 2026",
+      "venue": "Advanced AI & ML Lab (Block B)",
+      "prizePool": "IEEE Certificate & Credits",
+      "maxCapacity": 50,
+      "status": "closed",
+      "fee": "Free for IEEE Members",
+      "description": "Hands-on bootcamp covering transformer architectures, LoRA fine-tuning, and LangChain agents."
+    },
+    {
+      "id": "cybershield-ctf",
+      "title": "CyberShield State-Level CTF",
+      "category": "CTF",
+      "date": "2026-12-05",
+      "displayDate": "05 December 2026",
+      "venue": "Cyber Security War Room (Lab 03)",
+      "prizePool": "₹8,000",
+      "maxCapacity": 40,
+      "status": "closed",
+      "fee": "Free Entry",
+      "description": "State-level capture-the-flag tournament testing cryptography, web exploits, and binary forensics."
+    },
+    {
+      "id": "codemorph-dsa",
+      "title": "CodeMorph: Algorithmic Sprint",
+      "category": "Competitive Coding",
+      "date": "2027-01-20",
+      "displayDate": "20 January 2027",
+      "venue": "Online HackerRank Arena",
+      "prizePool": "₹5,000",
+      "maxCapacity": 80,
+      "status": "closed",
+      "fee": "Free Entry",
+      "description": "Speed coding sprint focusing on dynamic programming and graph trees in preparation for IEEE Xtreme."
+    }
+  ],
+  "registrations": [
+    {
+      "id": "REG-6379",
+      "eventId": "webnova-2026",
+      "eventName": "WebNova 2026 — Website Design Showdown",
+      "name": "joel george ",
+      "email": "georgeveliyathu72@gmail.com",
+      "phone": "",
+      "college": "mbits",
+      "department": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "isIeeeMember": true,
+      "ieeeId": "789999999999",
+      "status": "confirmed",
+      "registeredAt": "2026-09-29T12:55:19.877Z",
+      "notes": ""
+    },
+    {
+      "id": "REG-1582",
+      "eventId": "webnova-2026",
+      "eventName": "WebNova 2026 — Website Design Showdown",
+      "name": "Rohan Mathew",
+      "email": "rohan.mathew@mbits.ac.in",
+      "phone": "",
+      "college": "MBITS Kothamangalam",
+      "department": "CSE",
+      "year": "3rd Year",
+      "isIeeeMember": true,
+      "ieeeId": "99812401",
+      "status": "confirmed",
+      "registeredAt": "2026-09-27T17:12:12.148Z",
+      "notes": ""
+    },
+    {
+      "id": "REG-1001",
+      "eventId": "webnova-2026",
+      "eventName": "WebNova 2026 — Website Design Showdown",
+      "name": "Arjun R. Nair",
+      "email": "arjun.nair@mbits.ac.in",
+      "phone": "+91 94471 23456",
+      "college": "Mar Baselios Institute of Technology & Science",
+      "department": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "isIeeeMember": true,
+      "ieeeId": "98431201",
+      "status": "confirmed",
+      "registeredAt": "2026-09-20T10:15:00.000Z",
+      "notes": "Frontend focus: React, Tailwind CSS",
+      "paymentProof": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='520' viewBox='0 0 400 520' fill='none'><rect width='400' height='520' rx='20' fill='%230A0F1D'/><rect x='1' y='1' width='398' height='518' rx='19' stroke='%231E293B' stroke-width='2'/><rect x='20' y='24' width='360' height='70' rx='14' fill='%230F172A' stroke='%23334155' stroke-width='1'/><circle cx='55' cy='59' r='20' fill='%2310B981' fill-opacity='0.2'/><path d='M48 59L53 64L62 53' stroke='%2310B981' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/><text x='88' y='52' fill='%23FFFFFF' font-family='system-ui, sans-serif' font-size='14' font-weight='700'>Payment Successful</text><text x='88' y='70' fill='%2394A3B8' font-family='monospace' font-size='11'>20 Sep 2026, 10:14:22 AM</text><rect x='20' y='106' width='360' height='96' rx='14' fill='%23020617' stroke='%2300D2FF' stroke-opacity='0.3' stroke-width='1.5'/><text x='200' y='142' text-anchor='middle' fill='%2394A3B8' font-family='system-ui, sans-serif' font-size='12'>Amount Transferred</text><text x='200' y='180' text-anchor='middle' fill='%2300D2FF' font-family='monospace' font-size='32' font-weight='800'>₹100.00</text><rect x='20' y='214' width='360' height='230' rx='14' fill='%230F172A' stroke='%231E293B' stroke-width='1'/><text x='40' y='245' fill='%2364748B' font-family='system-ui, sans-serif' font-size='11'>PAID TO</text><text x='40' y='265' fill='%23FFFFFF' font-family='system-ui, sans-serif' font-size='13' font-weight='600'>IEEE CS MBITS Student Branch</text><text x='40' y='281' fill='%2338BDF8' font-family='monospace' font-size='11'>ieeecs.mbits@upi</text><line x1='40' y1='297' x2='360' y2='297' stroke='%231E293B' stroke-width='1'/><text x='40' y='325' fill='%2364748B' font-family='system-ui, sans-serif' font-size='11'>UPI TRANSACTION ID</text><text x='40' y='344' fill='%23E2E8F0' font-family='monospace' font-size='12' font-weight='600'>629088491204</text><text x='40' y='375' fill='%2364748B' font-family='system-ui, sans-serif' font-size='11'>FROM ACCOUNT</text><text x='40' y='394' fill='%23E2E8F0' font-family='system-ui, sans-serif' font-size='12'>State Bank of India •• 4209</text><text x='40' y='425' fill='%2364748B' font-family='system-ui, sans-serif' font-size='11'>PURPOSE / EVENT</text><text x='40' y='442' fill='%23E2E8F0' font-family='monospace' font-size='12'>WebNova 2026 Registration</text><rect x='20' y='456' width='360' height='42' rx='10' fill='%23020617' stroke='%231E293B' stroke-width='1'/><circle cx='38' cy='477' r='4' fill='%2310B981'/><text x='50' y='481' fill='%2310B981' font-family='system-ui, sans-serif' font-size='11' font-weight='600'>Verified by NPCI UPI FastPay</text></svg>",
+      "customAnswers": {
+        "phone": "+91 94471 23456",
+        "github": "https://github.com/arjun-nair",
+        "teamName": "CyberVanguard"
+      }
+    },
+    {
+      "id": "REG-1002",
+      "eventId": "webnova-2026",
+      "eventName": "WebNova 2026 — Website Design Showdown",
+      "name": "Devika S. Kumar",
+      "email": "devika.sk@gmail.com",
+      "phone": "+91 98462 77890",
+      "college": "Model Engineering College, Kochi",
+      "department": "Information Technology",
+      "year": "2nd Year",
+      "isIeeeMember": true,
+      "ieeeId": "96510482",
+      "status": "confirmed",
+      "registeredAt": "2026-09-21T14:32:00.000Z",
+      "notes": "UI/UX Designer & Scrollytelling specialist"
+    },
+    {
+      "id": "REG-1004",
+      "eventId": "hackelite-2026",
+      "eventName": "HackElite 24-Hr Hackathon",
+      "name": "Ananya Varma",
+      "email": "ananya.varma@mbits.ac.in",
+      "phone": "+91 94952 11234",
+      "college": "Mar Baselios Institute of Technology & Science",
+      "department": "Computer Science & Engineering",
+      "year": "3rd Year",
+      "isIeeeMember": true,
+      "ieeeId": "99120455",
+      "status": "pending",
+      "registeredAt": "2026-09-23T11:20:00.000Z",
+      "notes": "Team Lead for AgriSense IoT project"
+    },
+    {
+      "id": "REG-1006",
+      "eventId": "cybershield-ctf",
+      "eventName": "CyberShield State-Level CTF",
+      "name": "Siddharth Menon",
+      "email": "sid.menon@mbits.ac.in",
+      "phone": "+91 94002 67890",
+      "college": "Mar Baselios Institute of Technology & Science",
+      "department": "Computer Science & Engineering",
+      "year": "2nd Year",
+      "isIeeeMember": true,
+      "ieeeId": "99843211",
+      "status": "confirmed",
+      "registeredAt": "2026-09-25T13:40:00.000Z",
+      "notes": "Ghidra & Web Exploits track"
+    }
+  ],
+  "admin": {
+    "username": "admin",
+    "passwordHash": "mbits@ieee2026"
+  },
+  "lastUpdated": "2026-09-29T17:03:49.540Z",
+  "messages": [
+    {
+      "id": "MSG-3001",
+      "name": "Rohit K. Varma",
+      "email": "rohit.varma@gec.ac.in",
+      "subject": "WebNova 2026 Submission Format & Framework Inquiry",
+      "message": "Hello IEEE CS MBITS team, are we allowed to use Tailwind CSS and Supabase for the realtime scoring engine in WebNova 2026? Also, does the submission require a hosted demo link or just a GitHub repository? Thanks!",
+      "status": "new",
+      "createdAt": "2026-09-28T14:20:00.000Z"
+    },
+    {
+      "id": "MSG-3002",
+      "name": "Sneha Mohan",
+      "email": "sneha.mohan@gmail.com",
+      "subject": "Membership Drive & Computer Society Chapter Transfer",
+      "message": "I am a 2nd year CSE student currently registered under IEEE Kerala Section. How can I formally affiliate my IEEE membership with the MBITS Computer Society Student Branch Chapter (STB 65041) to access the research tracks?",
+      "status": "replied",
+      "createdAt": "2026-09-27T11:45:00.000Z"
+    },
+    {
+      "id": "MSG-3003",
+      "name": "Prof. Mathew Joseph",
+      "email": "m.joseph@visat.ac.in",
+      "subject": "HackElite 24-Hr Hackathon College Delegation & Mentorship",
+      "message": "Greetings from VISAT. We would like to send 4 student teams to the upcoming HackElite 24-hour hackathon. Could you provide details regarding on-campus lab facilities, hardware kits, and faculty registration?",
+      "status": "new",
+      "createdAt": "2026-09-29T08:30:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "name": "ieee-cs-mbits",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Official entry for WebNova - Website Design Competition by IEEE CS MBITS",
+  "author": "Joel George <joelveliyath05@gmail.com>",
+  "repository": "https://github.com/joelgeorge05/IEEE_Website.git",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview",
+    "package": "node scripts/package-submission.js"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "lucide-react": "^1.47.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.1",
+    "oxlint": "^1.81.0",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.3.0"
+  }
+}
