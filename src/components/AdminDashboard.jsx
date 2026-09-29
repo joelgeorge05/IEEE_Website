@@ -474,6 +474,48 @@ export default function AdminDashboard({ onNavigateHome }) {
     document.body.removeChild(link);
   };
 
+  const exportRegistrationsCsv = () => {
+    soundFx.playClick();
+    const headers = [
+      'Registration ID',
+      'Event Name',
+      'Participant Name',
+      'Email',
+      'Phone',
+      'College',
+      'Department',
+      'Year',
+      'IEEE Member',
+      'IEEE ID',
+      'Status',
+      'Registered At'
+    ];
+    const rows = registrations.map((r) => [
+      `"${r.id}"`,
+      `"${(r.eventName || r.eventId || '').replace(/"/g, '""')}"`,
+      `"${(r.name || '').replace(/"/g, '""')}"`,
+      `"${(r.email || '').replace(/"/g, '""')}"`,
+      `"${(r.phone || '').replace(/"/g, '""')}"`,
+      `"${(r.college || '').replace(/"/g, '""')}"`,
+      `"${(r.department || '').replace(/"/g, '""')}"`,
+      `"${(r.year || '').replace(/"/g, '""')}"`,
+      `"${r.isIeeeMember ? 'YES' : 'NO'}"`,
+      `"${(r.ieeeId || '').replace(/"/g, '""')}"`,
+      `"${(r.status || '').toUpperCase()}"`,
+      `"${r.registeredAt || ''}"`
+    ]);
+
+    const csvContent = [headers.join(','), ...rows.map((row) => row.join(','))].join('\n');
+    const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.setAttribute('href', url);
+    link.setAttribute('download', `IEEE_CS_MBITS_Registrations_${new Date().toISOString().slice(0, 10)}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   // Reload registrations on filter change
   useEffect(() => {
     if (isAuthenticated) {
@@ -1070,15 +1112,13 @@ export default function AdminDashboard({ onNavigateHome }) {
           {/* Action buttons */}
           <div className="flex items-center gap-2.5">
             {activeTab === 'registrations' && (
-              <a
-                href={api.getExportUrl(selectedEventFilter === 'all' ? '' : selectedEventFilter)}
-                onClick={() => soundFx.playClick()}
+              <button
+                onClick={exportRegistrationsCsv}
                 className="px-4 py-2 rounded-xl text-xs font-mono bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-500/30 transition-all flex items-center gap-1.5 font-semibold"
-                download
               >
                 <Download className="w-3.5 h-3.5" />
                 <span>Export CSV Sheet</span>
-              </a>
+              </button>
             )}
 
             {activeTab === 'messages' && (

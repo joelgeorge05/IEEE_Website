@@ -1,60 +1,77 @@
 // Client API utility for IEEE CS MBITS Event Management System
+// Hybrid architecture: Connects to Node/Express REST backend when available,
+// and gracefully falls back to persistent in-browser LocalDatabase on static hosts (Vercel, Netlify, GitHub Pages).
+
+import { localDB } from './localDatabase';
 
 const API_BASE = '/api';
+
+// Helper to safely execute fetch with fallback to local database
+async function safeFetch(endpoint, options = {}, fallbackFn) {
+  try {
+    const res = await fetch(`${API_BASE}${endpoint}`, options);
+    // If the server returned HTML (common when SPA catch-all rewrites /api/* to index.html on static hosts)
+    const contentType = res.headers.get('content-type') || '';
+    if (res.ok && contentType.includes('application/json')) {
+      return await res.json();
+    }
+  } catch (err) {
+    // Backend offline or unreachable
+  }
+
+  // Graceful fallback to client-side database
+  if (fallbackFn) {
+    return fallbackFn();
+  }
+  return { success: false, message: 'Operation failed' };
+}
 
 export const api = {
   // --- AUTH ---
   async login(username, password) {
-    const res = await fetch(`${API_BASE}/auth/login`, {
+    return safeFetch('/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username, password })
-    });
-    return res.json();
+    }, () => localDB.login(username, password));
   },
 
   async verifyAuth(token) {
-    const res = await fetch(`${API_BASE}/auth/verify`, {
+    return safeFetch('/auth/verify', {
       headers: { Authorization: `Bearer ${token}` }
-    });
-    return res.json();
+    }, () => localDB.verifyAuth(token));
   },
 
   // --- STATS ---
   async getStats() {
-    const res = await fetch(`${API_BASE}/stats`);
-    return res.json();
+    return safeFetch('/stats', {}, () => localDB.getStats());
   },
 
   // --- EVENTS ---
   async getEvents() {
-    const res = await fetch(`${API_BASE}/events`);
-    return res.json();
+    return safeFetch('/events', {}, () => localDB.getEvents());
   },
 
   async createEvent(eventData) {
-    const res = await fetch(`${API_BASE}/events`, {
+    return safeFetch('/events', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(eventData)
-    });
-    return res.json();
+    }, () => localDB.createEvent(eventData));
   },
 
   async updateEvent(id, updateData) {
-    const res = await fetch(`${API_BASE}/events/${id}`, {
+    return safeFetch(`/events/${id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(updateData)
-    });
-    return res.json();
+    }, () => localDB.updateEvent(id, updateData));
   },
 
   async deleteEvent(id) {
-    const res = await fetch(`${API_BASE}/events/${id}`, {
+    return safeFetch(`/events/${id}`, {
       method: 'DELETE'
-    });
-    return res.json();
+    }, () => localDB.deleteEvent(id));
   },
 
   // --- REGISTRATIONS ---
@@ -64,33 +81,29 @@ export const api = {
     if (params.status) query.append('status', params.status);
     if (params.search) query.append('search', params.search);
 
-    const res = await fetch(`${API_BASE}/registrations?${query.toString()}`);
-    return res.json();
+    return safeFetch(`/registrations?${query.toString()}`, {}, () => localDB.getRegistrations(params));
   },
 
   async submitRegistration(regData) {
-    const res = await fetch(`${API_BASE}/registrations`, {
+    return safeFetch('/registrations', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(regData)
-    });
-    return res.json();
+    }, () => localDB.submitRegistration(regData));
   },
 
   async updateRegistrationStatus(id, status) {
-    const res = await fetch(`${API_BASE}/registrations/${id}/status`, {
+    return safeFetch(`/registrations/${id}/status`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
-    });
-    return res.json();
+    }, () => localDB.updateRegistrationStatus(id, status));
   },
 
   async deleteRegistration(id) {
-    const res = await fetch(`${API_BASE}/registrations/${id}`, {
+    return safeFetch(`/registrations/${id}`, {
       method: 'DELETE'
-    });
-    return res.json();
+    }, () => localDB.deleteRegistration(id));
   },
 
   // --- TRANSMISSIONS / MESSAGES ---
@@ -99,33 +112,29 @@ export const api = {
     if (params.status) query.append('status', params.status);
     if (params.search) query.append('search', params.search);
 
-    const res = await fetch(`${API_BASE}/messages?${query.toString()}`);
-    return res.json();
+    return safeFetch(`/messages?${query.toString()}`, {}, () => localDB.getMessages(params));
   },
 
   async submitMessage(messageData) {
-    const res = await fetch(`${API_BASE}/messages`, {
+    return safeFetch('/messages', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(messageData)
-    });
-    return res.json();
+    }, () => localDB.submitMessage(messageData));
   },
 
   async updateMessageStatus(id, status) {
-    const res = await fetch(`${API_BASE}/messages/${id}/status`, {
+    return safeFetch(`/messages/${id}/status`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ status })
-    });
-    return res.json();
+    }, () => localDB.updateMessageStatus(id, status));
   },
 
   async deleteMessage(id) {
-    const res = await fetch(`${API_BASE}/messages/${id}`, {
+    return safeFetch(`/messages/${id}`, {
       method: 'DELETE'
-    });
-    return res.json();
+    }, () => localDB.deleteMessage(id));
   },
 
   // --- EXPORT CSV ---
@@ -135,9 +144,8 @@ export const api = {
 
   // --- SEED RESET ---
   async resetDatabase() {
-    const res = await fetch(`${API_BASE}/seed`, {
+    return safeFetch('/seed', {
       method: 'POST'
-    });
-    return res.json();
+    }, () => localDB.resetDatabase());
   }
 };
