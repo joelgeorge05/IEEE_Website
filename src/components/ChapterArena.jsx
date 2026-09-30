@@ -16,7 +16,8 @@ import {
   Camera,
   Upload,
   Trash2,
-  Check
+  Check,
+  ArrowRight
 } from 'lucide-react';
 import { EVENTS_DATA } from '../data/eventsData';
 import { soundFx } from '../utils/soundEffects';
@@ -33,6 +34,7 @@ export default function ChapterArena() {
   const [customAnswers, setCustomAnswers] = useState({});
   const [paymentProof, setPaymentProof] = useState(null); // { dataUrl, fileName, fileSize }
   const [previewProofModal, setPreviewProofModal] = useState(false);
+  const [mobileModalTab, setMobileModalTab] = useState('form'); // 'form' | 'details' | 'poster'
   
   // Competition Poster state & Lightbox modal
   const [posterSrc, setPosterSrc] = useState('/webnova-poster.jpg');
@@ -113,9 +115,10 @@ export default function ChapterArena() {
     ? eventsList 
     : eventsList.filter((e) => e.category === activeFilter);
 
-  const openEventModal = (event) => {
+  const openEventModal = (event, initialTab = 'form') => {
     soundFx.playClick();
     setSelectedEvent(event);
+    setMobileModalTab(initialTab);
     setRegisteredSuccess(false);
     setRegError('');
     setRegForm({ name: '', email: '', college: '', ieeeId: '' });
@@ -317,7 +320,7 @@ export default function ChapterArena() {
               {/* Button Action */}
               <div className="pt-2 flex flex-wrap items-center gap-3">
                 <button
-                  onClick={() => openEventModal(eventsList[0] || EVENTS_DATA[0])}
+                  onClick={() => openEventModal(eventsList[0] || EVENTS_DATA[0], 'form')}
                   className="px-6 py-3 rounded-xl font-semibold text-xs sm:text-sm bg-gradient-to-r from-ieee-blue to-ieee-cyan text-white shadow-[0_0_20px_rgba(0,210,255,0.4)] hover:shadow-[0_0_30px_rgba(0,210,255,0.7)] hover:scale-[1.02] active:scale-95 transition-all flex items-center gap-2"
                 >
                   <span>Submit / Register Entry</span>
@@ -399,7 +402,7 @@ export default function ChapterArena() {
                 {/* Event Poster Flyer if available */}
                 {event.poster && (
                   <div 
-                    onClick={() => openEventModal(event)}
+                    onClick={() => openEventModal(event, 'poster')}
                     className="relative aspect-[3/4] w-full rounded-xl overflow-hidden mb-4 border border-slate-800 bg-slate-950 group-hover:border-ieee-cyan/50 transition-all flex items-center justify-center cursor-pointer p-1.5 shadow-md"
                     title="Click to view full event details"
                   >
@@ -461,7 +464,7 @@ export default function ChapterArena() {
 
               <div className="pt-4 border-t border-slate-800/80 flex items-center justify-between">
                 <button
-                  onClick={() => openEventModal(event)}
+                  onClick={() => openEventModal(event, 'details')}
                   className="text-xs font-semibold text-ieee-cyan hover:text-white flex items-center gap-1.5 transition-colors"
                 >
                   <span>View Details</span>
@@ -469,7 +472,7 @@ export default function ChapterArena() {
                 </button>
 
                 <button
-                  onClick={() => openEventModal(event)}
+                  onClick={() => openEventModal(event, 'form')}
                   className="px-3 py-1.5 rounded-lg text-xs font-mono font-semibold bg-ieee-blue/20 hover:bg-ieee-blue/40 text-ieee-cyan border border-ieee-cyan/30 transition-all flex items-center gap-1.5"
                 >
                   <span>Register</span>
@@ -523,11 +526,62 @@ export default function ChapterArena() {
               </button>
             </div>
 
+            {/* Mobile Tab Switcher: Segmented controls for mobile devices */}
+            <div className="lg:hidden flex items-center bg-slate-950/95 border-b border-slate-800 p-1.5 gap-1 shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  soundFx.playClick();
+                  setMobileModalTab('form');
+                }}
+                className={`flex-1 py-2 px-2 rounded-xl text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all ${
+                  mobileModalTab === 'form'
+                    ? 'bg-gradient-to-r from-ieee-blue to-ieee-cyan text-white shadow-md'
+                    : 'text-slate-400 hover:text-white bg-slate-900/80 border border-slate-800'
+                }`}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span>Registration Form</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  soundFx.playClick();
+                  setMobileModalTab('details');
+                }}
+                className={`flex-1 py-2 px-2 rounded-xl text-xs font-mono font-semibold flex items-center justify-center gap-1 transition-all ${
+                  mobileModalTab === 'details'
+                    ? 'bg-gradient-to-r from-ieee-blue to-ieee-cyan text-white shadow-md'
+                    : 'text-slate-400 hover:text-white bg-slate-900/80 border border-slate-800'
+                }`}
+              >
+                <span>Details & Specs</span>
+              </button>
+              {selectedEvent.poster && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    soundFx.playClick();
+                    setMobileModalTab('poster');
+                  }}
+                  className={`flex-1 py-2 px-2 rounded-xl text-xs font-mono font-semibold flex items-center justify-center gap-1 transition-all ${
+                    mobileModalTab === 'poster'
+                      ? 'bg-gradient-to-r from-ieee-blue to-ieee-cyan text-white shadow-md'
+                      : 'text-slate-400 hover:text-white bg-slate-900/80 border border-slate-800'
+                  }`}
+                >
+                  <span>Flyer</span>
+                </button>
+              )}
+            </div>
+
             {/* Panoramic 3-Panel Grid: Wide horizontal space utilization */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-800 overflow-y-auto lg:overflow-visible">
+            <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-800 flex-1 overflow-y-auto">
               
               {/* Panel 1: Official Poster Showcase */}
-              <div className="lg:col-span-3 p-4 sm:p-5 bg-slate-950/70 flex flex-col justify-between gap-3">
+              <div className={`lg:col-span-3 p-4 sm:p-5 bg-slate-950/70 flex-col justify-between gap-3 overflow-y-auto ${
+                mobileModalTab === 'poster' ? 'flex' : 'hidden lg:flex'
+              }`}>
                 {selectedEvent.poster ? (
                   <div className="flex flex-col items-center justify-center flex-1">
                     <div className="relative w-full rounded-xl overflow-hidden border border-slate-800 bg-black flex items-center justify-center p-2 shadow-inner">
@@ -569,10 +623,26 @@ export default function ChapterArena() {
                     </div>
                   </div>
                 )}
+
+                {/* Mobile Quick Action to switch to form */}
+                <button
+                  type="button"
+                  onClick={() => {
+                    soundFx.playClick();
+                    setMobileModalTab('form');
+                  }}
+                  className="lg:hidden w-full mt-3 py-2.5 px-3 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-ieee-blue to-ieee-cyan text-white flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition-all"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <span>Proceed to Registration Form</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
 
               {/* Panel 2: Event Details & Specifications (Expanded Middle Column) */}
-              <div className="lg:col-span-5 p-4 sm:p-5 space-y-3 flex flex-col justify-between">
+              <div className={`lg:col-span-5 p-4 sm:p-5 space-y-3 flex-col justify-between overflow-y-auto ${
+                mobileModalTab === 'details' ? 'flex' : 'hidden lg:flex'
+              }`}>
                 <div>
                   <h3 className="text-lg sm:text-xl font-bold font-display text-white mb-1 leading-snug">
                     {selectedEvent.title}
@@ -715,10 +785,28 @@ export default function ChapterArena() {
                     </div>
                   </div>
                 )}
+
+                {/* Quick Jump to Form on mobile */}
+                <div className="lg:hidden pt-3 border-t border-slate-800 mt-2">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      soundFx.playClick();
+                      setMobileModalTab('form');
+                    }}
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-bold bg-gradient-to-r from-ieee-blue to-ieee-cyan text-white flex items-center justify-center gap-2 shadow-md active:scale-95 transition-all"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span>Proceed to Registration Form</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </div>
               </div>
 
               {/* Panel 3: Filling Boxes & Dynamic Registration Form (Right Column) */}
-              <div className="lg:col-span-4 p-4 sm:p-5 bg-slate-950/60 flex flex-col justify-between max-h-[82vh] overflow-y-auto">
+              <div className={`lg:col-span-4 p-4 sm:p-5 bg-slate-950/60 flex-col justify-between flex-1 lg:max-h-[82vh] overflow-y-auto ${
+                mobileModalTab === 'form' ? 'flex' : 'hidden lg:flex'
+              }`}>
                 {registeredSuccess ? (
                   <div className="bg-emerald-950/40 border border-emerald-500/40 p-5 rounded-2xl text-center space-y-3 my-auto animate-fadeIn">
                     <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto border border-emerald-500/30">
