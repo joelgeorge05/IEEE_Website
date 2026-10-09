@@ -850,8 +850,8 @@ export default function AdminDashboard({ onNavigateHome }) {
 
           {/* Header Logos & Title */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2 bg-white rounded-lg shadow-sm">
-              <img src="/ieee-logo.svg" alt="IEEE" className="h-6 w-auto" />
+            <div className="p-2 bg-slate-900/80 border border-slate-700/60 rounded-lg shadow-sm">
+              <img src="/ieee-logo-white.svg" alt="IEEE" className="h-6 w-auto" />
             </div>
             <div>
               <div className="text-[10px] font-mono text-ieee-cyan font-semibold">IEEE CS MBITS // SB 65041</div>
@@ -945,7 +945,7 @@ export default function AdminDashboard({ onNavigateHome }) {
           </button>
 
           <div className="flex items-center gap-3">
-            <img src="/ieee-logo.svg" alt="IEEE" className="h-6 w-auto bg-white px-1.5 py-0.5 rounded" />
+            <img src="/ieee-logo-white.svg" alt="IEEE" className="h-6 w-auto bg-slate-900/80 border border-slate-700/60 px-1.5 py-0.5 rounded" />
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-base font-bold text-white leading-none">IEEE CS MBITS Command Center</h1>

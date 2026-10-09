@@ -45,40 +45,34 @@ export default function Navbar({
           onClick={() => soundFx.playClick()}
           className="flex items-center gap-3 group"
         >
-          {/* Logo Container */}
-          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+          {/* Institutional Logos Pod - Seamlessly blended into cyber dark background */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-900/70 border border-slate-700/60 backdrop-blur-md shadow-[0_0_15px_rgba(0,0,0,0.3)] group-hover:border-ieee-cyan/40 transition-all duration-300 shrink-0">
             {/* IEEE Logo */}
-            <div className="h-7 sm:h-9 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-white/95 flex items-center justify-center shadow-[0_0_12px_rgba(0,210,255,0.2)] group-hover:scale-105 transition-transform">
-              <img 
-                src="/ieee-logo.svg" 
-                alt="IEEE Logo" 
-                className="h-4 sm:h-6 w-auto object-contain" 
-              />
-            </div>
+            <img 
+              src="/ieee-logo-white.svg" 
+              alt="IEEE Logo" 
+              className="h-4 sm:h-5 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity" 
+            />
 
             {/* Divider */}
-            <span className="text-slate-600 font-light text-xs sm:text-sm">|</span>
+            <span className="h-3.5 sm:h-4 w-px bg-slate-700/60" />
 
             {/* IEEE Computer Society Logo */}
-            <div className="h-7 sm:h-9 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-white/95 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <img 
-                src="/ieee-cs-logo.png" 
-                alt="IEEE Computer Society Logo" 
-                className="h-4 sm:h-6 w-auto object-contain" 
-              />
-            </div>
+            <img 
+              src="/ieee-cs-logo-dark.png" 
+              alt="IEEE Computer Society Logo" 
+              className="h-4 sm:h-5 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity" 
+            />
 
             {/* Divider */}
-            <span className="text-slate-600 font-light text-xs sm:text-sm">|</span>
+            <span className="h-3.5 sm:h-4 w-px bg-slate-700/60" />
 
             {/* MBITS Logo */}
-            <div className="h-7 sm:h-9 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-white/95 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <img 
-                src="/mbits-logo.jpg" 
-                alt="MBITS Logo" 
-                className="h-4 sm:h-6 w-auto object-contain" 
-              />
-            </div>
+            <img 
+              src="/mbits-logo-dark.png" 
+              alt="MBITS Logo" 
+              className="h-4 sm:h-5 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity" 
+            />
           </div>
 
           <div className="hidden sm:block text-left">
