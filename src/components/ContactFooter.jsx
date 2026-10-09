@@ -333,12 +333,12 @@ export default function ContactFooter() {
 
         {/* Logos & Institutional Endorsement */}
         <div className="pt-10 pb-6 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6 border-t border-slate-800/80 text-center md:text-right">
-          <div className="flex items-center justify-center gap-2.5 sm:gap-3.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl bg-slate-900/70 border border-slate-800/80 backdrop-blur-md shadow-sm shrink-0">
-            <img src="/ieee-logo-white.svg" alt="IEEE Logo" className="h-5 sm:h-6.5 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
-            <span className="h-4 sm:h-5 w-px bg-slate-800" />
-            <img src="/ieee-cs-logo-dark.png" alt="IEEE Computer Society Logo" className="h-5 sm:h-6.5 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
-            <span className="h-4 sm:h-5 w-px bg-slate-800" />
-            <img src="/mbits-logo-dark.png" alt="MBITS Logo" className="h-5 sm:h-6.5 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity" />
+          <div className="flex items-center justify-center gap-2.5 sm:gap-3 shrink-0 px-3.5 py-2 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-inner backdrop-blur-md">
+            <img src="/ieee-logo-white.svg" alt="IEEE Logo" className="h-6 sm:h-7 w-auto object-contain" />
+            <span className="text-slate-700 font-light text-sm select-none">|</span>
+            <img src="/ieee-cs-logo-dark.png" alt="IEEE Computer Society Logo" className="h-6 sm:h-7 w-auto object-contain" />
+            <span className="text-slate-700 font-light text-sm select-none">|</span>
+            <img src="/mbits-logo-dark.png" alt="MBITS Logo" className="h-5 sm:h-6 w-auto object-contain" />
           </div>
 
           <div className="text-xs text-slate-400 font-mono space-y-1 text-center md:text-right w-full md:w-auto">

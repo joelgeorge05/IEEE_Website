@@ -45,33 +45,33 @@ export default function Navbar({
           onClick={() => soundFx.playClick()}
           className="flex items-center gap-3 group"
         >
-          {/* Institutional Logos Pod - Seamlessly blended into cyber dark background */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-900/70 border border-slate-700/60 backdrop-blur-md shadow-[0_0_15px_rgba(0,0,0,0.3)] group-hover:border-ieee-cyan/40 transition-all duration-300 shrink-0">
+          {/* Logo Container */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-900/80 border border-slate-800/90 shadow-[0_0_15px_rgba(0,0,0,0.5)] backdrop-blur-md group-hover:border-slate-700/80 transition-all shrink-0">
             {/* IEEE Logo */}
             <img 
               src="/ieee-logo-white.svg" 
               alt="IEEE Logo" 
-              className="h-4 sm:h-5 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity" 
+              className="h-4 sm:h-5.5 w-auto object-contain transition-transform group-hover:scale-105" 
             />
 
             {/* Divider */}
-            <span className="h-3.5 sm:h-4 w-px bg-slate-700/60" />
+            <span className="text-slate-700 font-light text-xs sm:text-sm select-none">|</span>
 
             {/* IEEE Computer Society Logo */}
             <img 
               src="/ieee-cs-logo-dark.png" 
               alt="IEEE Computer Society Logo" 
-              className="h-4 sm:h-5 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity" 
+              className="h-4 sm:h-5.5 w-auto object-contain transition-transform group-hover:scale-105" 
             />
 
             {/* Divider */}
-            <span className="h-3.5 sm:h-4 w-px bg-slate-700/60" />
+            <span className="text-slate-700 font-light text-xs sm:text-sm select-none">|</span>
 
             {/* MBITS Logo */}
             <img 
               src="/mbits-logo-dark.png" 
               alt="MBITS Logo" 
-              className="h-4 sm:h-5 w-auto object-contain opacity-95 group-hover:opacity-100 transition-opacity" 
+              className="h-3.5 sm:h-5 w-auto object-contain transition-transform group-hover:scale-105" 
             />
           </div>
 
