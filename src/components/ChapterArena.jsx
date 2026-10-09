@@ -86,7 +86,7 @@ export default function ChapterArena() {
   });
 
   useEffect(() => {
-    const target = new Date('2026-09-30T23:59:59').getTime();
+    const target = new Date('2026-10-31T23:59:59').getTime();
 
     const updateTimer = () => {
       const now = new Date().getTime();
@@ -212,7 +212,7 @@ export default function ChapterArena() {
 
   return (
     <section id="chapter-2" className="py-24 relative border-b border-ieee-border/50 bg-slate-950/30">
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1760px] 2xl:max-w-[2040px] 3xl:max-w-[2360px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16 3xl:px-20 relative z-10">
         
         {/* Chapter Header */}
         <div className="mb-4">
@@ -327,7 +327,7 @@ export default function ChapterArena() {
                   <ExternalLink className="w-4 h-4" />
                 </button>
                 <div className="text-xs text-slate-400 font-mono">
-                  Deadline: <span className="text-white font-semibold">30 September 2026</span>
+                  Deadline: <span className="text-white font-semibold">31 October 2026</span>
                 </div>
               </div>
             </div>

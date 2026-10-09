@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 export default function ParticleBackground() {
   const canvasRef = useRef(null);
@@ -18,8 +18,9 @@ export default function ParticleBackground() {
     };
     window.addEventListener('resize', handleResize);
 
-    // Particle nodes
-    const particleCount = Math.min(Math.floor(window.innerWidth / 20), 70);
+    // Particle nodes - dynamically scaled for display width
+    const particleCount = Math.min(Math.max(Math.floor(window.innerWidth / 22), 40), 110);
+    const maxDist = window.innerWidth > 1920 ? 150 : 130;
     const particles = [];
 
     for (let i = 0; i < particleCount; i++) {
@@ -50,8 +51,8 @@ export default function ParticleBackground() {
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 130) {
-            const alpha = (1 - dist / 130) * 0.15;
+          if (dist < maxDist) {
+            const alpha = (1 - dist / maxDist) * 0.15;
             ctx.beginPath();
             ctx.strokeStyle = `rgba(0, 210, 255, ${alpha})`;
             ctx.lineWidth = 0.75;

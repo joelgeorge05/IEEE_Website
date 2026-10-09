@@ -7,6 +7,10 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        '3xl': '1920px',
+        '4xl': '2560px',
+      },
       colors: {
         ieee: {
           blue: '#00629B',
@@ -27,6 +31,7 @@ export default {
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
         display: ['Space Grotesk', 'Outfit', 'Plus Jakarta Sans', 'sans-serif'],
         outfit: ['Outfit', 'Space Grotesk', 'sans-serif'],
+        sora: ['Sora', 'sans-serif'],
         tech: ['Space Grotesk', 'JetBrains Mono', 'monospace'],
       },
       animation: {

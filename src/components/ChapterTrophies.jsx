@@ -13,7 +13,7 @@ export default function ChapterTrophies() {
 
   return (
     <section id="chapter-3" className="py-24 relative border-b border-ieee-border/50">
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1760px] 2xl:max-w-[2040px] 3xl:max-w-[2360px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16 3xl:px-20 relative z-10">
         
         {/* Chapter Header */}
         <div className="mb-4">

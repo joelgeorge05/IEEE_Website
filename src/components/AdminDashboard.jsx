@@ -850,8 +850,8 @@ export default function AdminDashboard({ onNavigateHome }) {
 
           {/* Header Logos & Title */}
           <div className="flex items-center gap-3 mb-6">
-            <div className="p-2.5 bg-slate-900 border border-slate-800 rounded-xl shadow-inner">
-              <img src="/ieee-logo-white.svg" alt="IEEE" className="h-6 w-auto" />
+            <div className="p-2 bg-white rounded-lg shadow-sm">
+              <img src="/ieee-logo.svg" alt="IEEE" className="h-6 w-auto" />
             </div>
             <div>
               <div className="text-[10px] font-mono text-ieee-cyan font-semibold">IEEE CS MBITS // SB 65041</div>
@@ -925,6 +925,18 @@ export default function AdminDashboard({ onNavigateHome }) {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 text-left relative selection:bg-ieee-cyan selection:text-slate-950">
       
+      {/* Background Computer Society Watermark */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden select-none"
+        aria-hidden="true"
+      >
+        <img 
+          src="/ieee-cs-logo-dark.png" 
+          alt="" 
+          className="w-[520px] sm:w-[720px] md:w-[920px] lg:w-[1120px] 2xl:w-[1320px] max-w-[85vw] object-contain opacity-[0.035] 2xl:opacity-[0.04] pointer-events-none select-none filter drop-shadow-[0_0_80px_rgba(0,210,255,0.08)]"
+        />
+      </div>
+
       {/* Toast Notice */}
       {actionNotice && (
         <div className="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl bg-emerald-500 text-slate-950 font-mono text-xs font-bold shadow-2xl flex items-center gap-2 animate-bounce">
@@ -945,9 +957,7 @@ export default function AdminDashboard({ onNavigateHome }) {
           </button>
 
           <div className="flex items-center gap-3">
-            <div className="p-1.5 bg-slate-800/80 border border-slate-700/60 rounded-lg">
-              <img src="/ieee-logo-white.svg" alt="IEEE" className="h-5 w-auto" />
-            </div>
+            <img src="/ieee-logo.svg" alt="IEEE" className="h-6 w-auto bg-white px-1.5 py-0.5 rounded" />
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-base font-bold text-white leading-none">IEEE CS MBITS Command Center</h1>
@@ -983,7 +993,7 @@ export default function AdminDashboard({ onNavigateHome }) {
       </header>
 
       {/* Main Container */}
-      <main className="max-w-[1560px] mx-auto px-4 sm:px-8 py-8 space-y-8">
+      <main className="w-full max-w-[1760px] 2xl:max-w-[2040px] 3xl:max-w-[2360px] mx-auto px-4 sm:px-8 py-8 space-y-8">
         
         {/* Top Metric Cards */}
         {stats && (

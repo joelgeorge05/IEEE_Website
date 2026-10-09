@@ -37,7 +37,7 @@ export default function Navbar({
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="w-full max-w-[1760px] 2xl:max-w-[2040px] 3xl:max-w-[2360px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16 3xl:px-20 flex items-center justify-between">
         
         {/* Brand / Dual Logos */}
         <a 
@@ -46,33 +46,39 @@ export default function Navbar({
           className="flex items-center gap-3 group"
         >
           {/* Logo Container */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl bg-slate-900/80 border border-slate-800/90 shadow-[0_0_15px_rgba(0,0,0,0.5)] backdrop-blur-md group-hover:border-slate-700/80 transition-all shrink-0">
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
             {/* IEEE Logo */}
-            <img 
-              src="/ieee-logo-white.svg" 
-              alt="IEEE Logo" 
-              className="h-4 sm:h-5.5 w-auto object-contain transition-transform group-hover:scale-105" 
-            />
+            <div className="h-7 sm:h-9 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-white/95 flex items-center justify-center shadow-[0_0_12px_rgba(0,210,255,0.2)] group-hover:scale-105 transition-transform">
+              <img 
+                src="/ieee-logo.svg" 
+                alt="IEEE Logo" 
+                className="h-4 sm:h-6 w-auto object-contain" 
+              />
+            </div>
 
             {/* Divider */}
-            <span className="text-slate-700 font-light text-xs sm:text-sm select-none">|</span>
+            <span className="text-slate-600 font-light text-xs sm:text-sm">|</span>
 
             {/* IEEE Computer Society Logo */}
-            <img 
-              src="/ieee-cs-logo-dark.png" 
-              alt="IEEE Computer Society Logo" 
-              className="h-4 sm:h-5.5 w-auto object-contain transition-transform group-hover:scale-105" 
-            />
+            <div className="h-7 sm:h-9 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-white/95 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+              <img 
+                src="/ieee-cs-logo.png" 
+                alt="IEEE Computer Society Logo" 
+                className="h-4 sm:h-6 w-auto object-contain" 
+              />
+            </div>
 
             {/* Divider */}
-            <span className="text-slate-700 font-light text-xs sm:text-sm select-none">|</span>
+            <span className="text-slate-600 font-light text-xs sm:text-sm">|</span>
 
             {/* MBITS Logo */}
-            <img 
-              src="/mbits-logo-dark.png" 
-              alt="MBITS Logo" 
-              className="h-3.5 sm:h-5 w-auto object-contain transition-transform group-hover:scale-105" 
-            />
+            <div className="h-7 sm:h-9 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-white/95 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
+              <img 
+                src="/mbits-logo.jpg" 
+                alt="MBITS Logo" 
+                className="h-4 sm:h-6 w-auto object-contain" 
+              />
+            </div>
           </div>
 
           <div className="hidden sm:block text-left">

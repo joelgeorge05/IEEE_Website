@@ -85,7 +85,7 @@ export default function InteractiveTerminal({ isOpen, onClose, onNavigateToAdmin
 --------------------------------------------------------------
 Title       : WebNova 2026 — Website Design Showdown
 Category    : Flagship Competition
-Date        : 30 September 2026 (Live Evaluation)
+Date        : 31 October 2026 (Live Evaluation)
 Venue       : MBITS Computer Center Labs & Online Submission
 Prize Pool  : ₹1,000 + IEEE Official Merit Certificates
 Capacity    : 100 Participants (Registration Open)
@@ -531,7 +531,7 @@ KEY ACADEMIC DEPARTMENTS:
           text: `[ACTIVE & UPCOMING CHAPTER EVENTS 2026-2027]
 ====================================================================
 1. webnova-2026      : WebNova 2026 Website Design Showdown
-   • Date   : 30 September 2026 (Live Now)
+   • Date   : 31 October 2026 (Live Now)
    • Prize  : ₹1,000 + Merit Certificates
    • Fee    : Free for IEEE Members / ₹100 Non-Members
    • Status : REGISTRATION OPEN
@@ -684,7 +684,7 @@ Official Chapter Contact   : ieee.cs@mbits.ac.in`
 ====================================================================
 Organizer   : IEEE Computer Society MBITS Student Branch Chapter
 Target      : Design the official website for IEEE CS MBITS
-Deadline    : 30 September 2026 at 23:59 IST
+Deadline    : 31 October 2026 at 23:59 IST
 Prize Pool  : ₹1,000 Cash Prize + IEEE Official Merit Certificates
 Mode        : Individual / Online
 Evaluation  :

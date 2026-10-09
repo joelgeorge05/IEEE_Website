@@ -28,7 +28,7 @@ export default function ChapterGuild() {
 
   return (
     <section id="chapter-4" className="py-24 relative border-b border-ieee-border/50 bg-slate-950/40">
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full max-w-[1760px] 2xl:max-w-[2040px] 3xl:max-w-[2360px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16 3xl:px-20 relative z-10">
         
         {/* Chapter Header */}
         <div className="mb-4">
@@ -78,12 +78,12 @@ export default function ChapterGuild() {
           </button>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 xl:gap-7">
+        {/* Team Grid - Centered flex layout for balanced rows across all breakpoints */}
+        <div className="flex flex-wrap justify-center gap-6 xl:gap-8">
           {filteredTeam.map((member) => (
             <div
               key={member.name}
-              className="glass-panel rounded-2xl overflow-hidden border-ieee-border hover:border-ieee-cyan/40 hover:-translate-y-1.5 transition-all group flex flex-col justify-between"
+              className="w-full max-w-sm sm:max-w-none sm:w-[calc(50%-12px)] lg:w-[calc(25%-18px)] xl:w-[calc(25%-24px)] glass-panel rounded-2xl overflow-hidden border-ieee-border hover:border-ieee-cyan/40 hover:-translate-y-1.5 transition-all group flex flex-col justify-between"
             >
               <div>
                 {/* Photo */}

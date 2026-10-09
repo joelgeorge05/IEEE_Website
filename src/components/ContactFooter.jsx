@@ -89,7 +89,7 @@ export default function ContactFooter() {
 
   return (
     <footer id="contact" className="relative pt-24 pb-12 bg-slate-950 border-t border-ieee-border">
-      <div className="max-w-[1560px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1760px] 2xl:max-w-[2040px] 3xl:max-w-[2360px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 2xl:px-16 3xl:px-20">
         
         {/* Row 1: Contact Form (Left) & FAQs (Right) */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 mb-8 items-start">
@@ -333,12 +333,16 @@ export default function ContactFooter() {
 
         {/* Logos & Institutional Endorsement */}
         <div className="pt-10 pb-6 flex flex-col md:flex-row items-center justify-between gap-5 md:gap-6 border-t border-slate-800/80 text-center md:text-right">
-          <div className="flex items-center justify-center gap-2.5 sm:gap-3 shrink-0 px-3.5 py-2 rounded-2xl bg-slate-900/80 border border-slate-800/80 shadow-inner backdrop-blur-md">
-            <img src="/ieee-logo-white.svg" alt="IEEE Logo" className="h-6 sm:h-7 w-auto object-contain" />
-            <span className="text-slate-700 font-light text-sm select-none">|</span>
-            <img src="/ieee-cs-logo-dark.png" alt="IEEE Computer Society Logo" className="h-6 sm:h-7 w-auto object-contain" />
-            <span className="text-slate-700 font-light text-sm select-none">|</span>
-            <img src="/mbits-logo-dark.png" alt="MBITS Logo" className="h-5 sm:h-6 w-auto object-contain" />
+          <div className="flex items-center justify-center gap-2.5 sm:gap-3 shrink-0">
+            <div className="h-9 sm:h-10 px-2.5 sm:px-3 py-1 rounded-xl bg-white/95 flex items-center justify-center shadow-md">
+              <img src="/ieee-logo.svg" alt="IEEE Logo" className="h-6 sm:h-7 w-auto object-contain" />
+            </div>
+            <div className="h-9 sm:h-10 px-2.5 sm:px-3 py-1 rounded-xl bg-white/95 flex items-center justify-center shadow-md">
+              <img src="/ieee-cs-logo.png" alt="IEEE Computer Society Logo" className="h-6 sm:h-7 w-auto object-contain" />
+            </div>
+            <div className="h-9 sm:h-10 px-2.5 sm:px-3 py-1 rounded-xl bg-white/95 flex items-center justify-center shadow-md">
+              <img src="/mbits-logo.jpg" alt="MBITS Logo" className="h-6 sm:h-7 w-auto object-contain" />
+            </div>
           </div>
 
           <div className="text-xs text-slate-400 font-mono space-y-1 text-center md:text-right w-full md:w-auto">

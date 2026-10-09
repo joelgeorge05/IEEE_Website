@@ -104,6 +104,18 @@ export default function App() {
       {/* Cyber Grid Texture Overlay */}
       <div className="fixed inset-0 cyber-grid pointer-events-none opacity-40 z-0" />
 
+      {/* Global IEEE Computer Society Watermark */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-0 flex items-center justify-center overflow-hidden select-none"
+        aria-hidden="true"
+      >
+        <img 
+          src="/ieee-cs-logo-dark.png" 
+          alt="" 
+          className="w-[520px] sm:w-[720px] md:w-[920px] lg:w-[1120px] 2xl:w-[1320px] max-w-[85vw] object-contain opacity-[0.045] 2xl:opacity-[0.05] pointer-events-none select-none filter drop-shadow-[0_0_80px_rgba(0,210,255,0.08)]"
+        />
+      </div>
+
       {/* Navigation Header */}
       <Navbar
         isAudioOn={isAudioOn}
